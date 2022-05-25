@@ -1,0 +1,52 @@
+.sidebar-container {
+  width: 250px;
+  height: 100vh;
+  background-color: #0c2556;
+  color: white;
+  .sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 0;
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  }
+  .icon-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.8rem 0;
+    color: #6d8eaa;
+  }
+  h3 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding-left: 1rem;
+    cursor: pointer;
+  }
+  h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #6d8eaa;
+  }
+  svg {
+    fill: #6d8eaa;
+  }
+  .icon-flex.viewed {
+    width: 100%;
+    height: 50px;
+    background-color: #0f2e69;
+    svg.viewed {
+      fill: white;
+    }
+    h3.viewed {
+      color: white;
+    }
+  }
+  .managment-table,
+  .pages-table {
+    padding: 2rem 0 0 0;
+  }
+}
