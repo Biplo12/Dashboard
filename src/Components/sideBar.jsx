@@ -5,54 +5,34 @@ import {
   PeopleAltOutlined,
   ShoppingCartOutlined,
   MoreOutlined,
-  CalendarMonthOutlined,
 } from "@mui/icons-material";
 const sideBar = () => {
   return (
     <div className="sidebar-container">
-      <div className="sidebar-logo">
+      <div className="sidebar-title">
         <h1>Dashboard</h1>
       </div>
-      <div className="sidebar-button clicked">
-        <a href="/" className="icon-flex viewed">
-          <HomeOutlined className="viewed" />
-          <h3 className="viewed">Dashboard</h3>
-        </a>
-      </div>
-      <div className="managment-table">
+      <div className="sidebar-wrapper">
+        <div className="sidebar-item active">
+          <HomeOutlined />
+          <a href="/">Dashboard</a>
+        </div>
         <h4>MANAGMENT</h4>
-        <div className="sidebar-analytics">
-          <a href="/" className=" icon-flex">
-            <DataSaverOffOutlined />
-            <h3>Analytics</h3>
-          </a>
+        <div className="sidebar-item">
+          <DataSaverOffOutlined />
+          <a href="/analytics">Analytics</a>
         </div>
-        <div className="sidebar-customers">
-          <a href="/" className=" icon-flex">
-            <PeopleAltOutlined />
-            <h3>Customers</h3>
-          </a>
+        <div className="sidebar-item">
+          <PeopleAltOutlined />
+          <a href="/customers">Customers</a>
         </div>
-        <div className="sidebar-orders">
-          <a href="/" className=" icon-flex">
-            <ShoppingCartOutlined />
-            <h3>Orders</h3>
-          </a>
+        <div className="sidebar-item">
+          <ShoppingCartOutlined />
+          <a href="/orders">Orders</a>
         </div>
-        <div className="sidebar-products">
-          <a href="/" className=" icon-flex">
-            <MoreOutlined />
-            <h3>Products</h3>
-          </a>
-        </div>
-      </div>
-      <div className="pages-table">
-        <h4>PAGES</h4>
-        <div className="sidebar-calendar">
-          <a href="/" className=" icon-flex">
-            <CalendarMonthOutlined />
-            <h3>Calendar</h3>
-          </a>
+        <div className="sidebar-item">
+          <MoreOutlined />
+          <a href="/products">Products</a>
         </div>
       </div>
     </div>
