@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "__variables.scss";
 @import "__sidebar.scss";
+@import "__topbar.scss";
 
 *,
 *::after,
@@ -18,7 +19,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #6d8eaa;
+  color: white;
 }
 
 ul {

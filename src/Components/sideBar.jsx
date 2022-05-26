@@ -1,38 +1,38 @@
 import React from "react";
 import {
-  HomeOutlined,
+  WidgetsOutlined,
   DataSaverOffOutlined,
   PeopleAltOutlined,
   ShoppingCartOutlined,
   MoreOutlined,
+  LogoutOutlined,
 } from "@mui/icons-material";
 const sideBar = () => {
   return (
     <div className="sidebar-container">
-      <div className="sidebar-title">
-        <h1>Dashboard</h1>
+      <div className="sidebar-logo">
+        <h1>DS</h1>
       </div>
-      <div className="sidebar-wrapper">
+      <div className="sidebar-items-wrapper">
         <div className="sidebar-item active">
-          <HomeOutlined />
-          <a href="/">Dashboard</a>
+          <WidgetsOutlined />
         </div>
-        <h4>MANAGMENT</h4>
         <div className="sidebar-item">
           <DataSaverOffOutlined />
-          <a href="/analytics">Analytics</a>
         </div>
         <div className="sidebar-item">
           <PeopleAltOutlined />
-          <a href="/customers">Customers</a>
         </div>
         <div className="sidebar-item">
           <ShoppingCartOutlined />
-          <a href="/orders">Orders</a>
         </div>
         <div className="sidebar-item">
           <MoreOutlined />
-          <a href="/products">Products</a>
+        </div>
+      </div>
+      <div className="sidebar-bottom">
+        <div className="sidebar-item">
+          <LogoutOutlined />
         </div>
       </div>
     </div>
