@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   .sidebar-logo {
-    height: 60px;
+    height: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,9 +37,7 @@
   .sidebar-item.active {
     background-color: #2544d7;
     border-radius: 10px;
-  }
-  .sidebar-item.active:hover {
-    opacity: 1 !important;
+    box-shadow: $b-shadow;
   }
   .sidebar-item:hover {
     display: flex;
@@ -49,7 +47,7 @@
     height: 40px;
     background-color: #2544d7;
     border-radius: 10px;
-    opacity: 0.5;
+    box-shadow: $b-shadow;
   }
   .sidebar-bottom {
     width: 100%;
