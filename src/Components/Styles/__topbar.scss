@@ -11,18 +11,24 @@
   position: fixed;
   top: 0;
   left: 0;
+
   .topbar-left {
     .topbar-search {
+      width: 200px;
+      height: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
+      border: 1px solid #fff;
       input {
-        outline: none;
-        border: 1px solid white;
-        background-color: transparent;
         color: white;
-        padding-bottom: 0.5rem;
+        outline: none;
+        border: none;
+        background-color: transparent;
         font-size: 0.8rem;
+      }
+      input::placeholder {
+        color: white;
       }
       button {
         display: flex;

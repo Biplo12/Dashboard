@@ -9,7 +9,7 @@ const Topbar = () => {
     <div className="topbar-container">
       <div className="topbar-left">
         <div className="topbar-search">
-          <input type="text" />
+          <input type="text" placeholder="Search" />
           <button type="submit">
             <Search style={{ fill: "white" }} />
           </button>
