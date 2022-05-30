@@ -4,12 +4,13 @@ import {
   MonetizationOn,
   AccountBalanceWallet,
 } from "@mui/icons-material";
+import CountUp from "react-countup";
 
 export const widgetData = [
   {
     id: 1,
     title: "USERS",
-    value: "720",
+    value: <CountUp duration={1} end={760} />,
     buttonContent: "See all users",
     href: "/users",
     procentageBalance: true,
@@ -20,7 +21,7 @@ export const widgetData = [
   {
     id: 2,
     title: "ORDERS",
-    value: "260",
+    value: <CountUp duration={1.5} end={260} />,
     buttonContent: "View all orders",
     href: "/orders",
     procentageBalance: true,
@@ -31,7 +32,16 @@ export const widgetData = [
   {
     id: 3,
     title: "EARNINGS",
-    value: "$4.6k",
+    value: (
+      <CountUp
+        duration={1.5}
+        end={12.4}
+        prefix="$"
+        suffix="k"
+        decimals={1}
+        decimal="."
+      />
+    ),
     buttonContent: "View net earnings",
     href: "/earnings",
     procentageBalance: true,
@@ -42,7 +52,16 @@ export const widgetData = [
   {
     id: 4,
     title: "MY BALANCE",
-    value: "$7.6k",
+    value: (
+      <CountUp
+        duration={1.5}
+        end={7.6}
+        prefix="$"
+        suffix="k"
+        decimals={1}
+        decimal="."
+      />
+    ),
     buttonContent: "See balance",
     href: "/balance",
     procentageBalance: true,

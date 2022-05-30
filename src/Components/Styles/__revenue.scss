@@ -1,0 +1,62 @@
+.revenue-container {
+  flex: 2;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-shadow: $b-shadow;
+  border-radius: 10px;
+  margin-left: 40px;
+  .revenue-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 400;
+    padding: 20px 0;
+  }
+  .revenue-description {
+    font-size: 1rem;
+  }
+  .revenue-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    .revenue-item {
+      display: flex;
+      justify-content: center;
+      align-items: space-between;
+      flex-direction: column;
+      text-align: center;
+      .revenue-item-value {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 300;
+        padding-top: 10px;
+      }
+    }
+    .negative {
+      color: #ff7f7f;
+      svg {
+        fill: #ff7f7f;
+      }
+    }
+    .positive {
+      color: #23843d;
+      svg {
+        fill: #23843d;
+      }
+    }
+  }
+}

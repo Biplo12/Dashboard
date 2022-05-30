@@ -1,6 +1,5 @@
 import React from "react";
 import { widgetData } from "./widgetData";
-import { ArrowDropUp, arrowDropDown } from "@mui/icons-material";
 
 const Widget = () => {
   return (
@@ -17,7 +16,7 @@ const Widget = () => {
           iconBoxColor,
         }) => {
           return (
-            <div className="widget-card" key={id}>
+            <div className="widget" key={id}>
               <div className="card-left">
                 <h2>{title}</h2>
                 <h3>{value}</h3>
@@ -26,16 +25,9 @@ const Widget = () => {
                 </span>
               </div>
               <div className="card-right">
-                <div className="card-right-top">
-                  <p className="procentage">{`+ ${procentage}%`}</p>
-                </div>
-                <div className="card-right-bottom">
-                  <div
-                    className="icon-box"
-                    style={{ background: iconBoxColor }}
-                  >
-                    <a href={href}>{icon}</a>
-                  </div>
+                <p className="procentage">{`+ ${procentage}%`}</p>
+                <div className="icon-box" style={{ background: iconBoxColor }}>
+                  <a href={href}>{icon}</a>
                 </div>
               </div>
             </div>
