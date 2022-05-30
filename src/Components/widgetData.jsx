@@ -1,0 +1,53 @@
+import {
+  Group,
+  ShoppingCart,
+  MonetizationOn,
+  AccountBalanceWallet,
+} from "@mui/icons-material";
+
+export const widgetData = [
+  {
+    id: 1,
+    title: "USERS",
+    value: "720",
+    buttonContent: "See all users",
+    href: "/users",
+    procentageBalance: true,
+    procentage: 5,
+    icon: <Group style={{ fill: "#652F33" }} />,
+    iconBoxColor: "#FFD5D9",
+  },
+  {
+    id: 2,
+    title: "ORDERS",
+    value: "260",
+    buttonContent: "View all orders",
+    href: "/orders",
+    procentageBalance: true,
+    procentage: 2,
+    icon: <ShoppingCart style={{ fill: "#C5A352" }} />,
+    iconBoxColor: "#FDECCE",
+  },
+  {
+    id: 3,
+    title: "EARNINGS",
+    value: "$4.6k",
+    buttonContent: "View net earnings",
+    href: "/earnings",
+    procentageBalance: true,
+    procentage: 12,
+    icon: <MonetizationOn style={{ fill: "#3F8341" }} />,
+    iconBoxColor: "#CCE7C5",
+  },
+  {
+    id: 4,
+    title: "MY BALANCE",
+    value: "$7.6k",
+    buttonContent: "See balance",
+    href: "/balance",
+    procentageBalance: true,
+    procentage: 5,
+    icon: <AccountBalanceWallet style={{ fill: "#6E115F" }} />,
+    iconBoxColor: "#E9CBE7",
+  },
+];
