@@ -1,9 +1,16 @@
 .home-container {
   width: calc(100% - 65px);
-  height: calc(100vh - 100px);
+  height: calc(125vh - 100px);
   margin: 100px 0 0 65px;
   color: #000;
   .home-charts {
     display: flex;
+    padding: 1rem 2rem;
+    gap: 2rem;
+  }
+  .home-table {
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 2rem;
   }
 }

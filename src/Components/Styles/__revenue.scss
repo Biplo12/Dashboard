@@ -1,14 +1,13 @@
 .revenue-container {
-  flex: 2;
   height: auto;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 20px;
   box-shadow: $b-shadow;
   border-radius: 10px;
-  margin-left: 40px;
   .revenue-title {
     width: 100%;
     display: flex;
