@@ -55,16 +55,16 @@ const rows = [
 ];
 
 const columns = [
-  { field: "trackId", headerName: "Tracking ID", width: 350 },
-  { field: "product", headerName: "Product", width: 500 },
-  { field: "customer", headerName: "Customer", width: 350 },
-  { field: "date", headerName: "Date", width: 250 },
-  { field: "amount", headerName: "Amount", width: 250 },
-  { field: "payment", headerName: "Payment Method", width: 350 },
+  { field: "trackId", headerName: "Tracking ID", width: 150 },
+  { field: "product", headerName: "Product", width: 250 },
+  { field: "customer", headerName: "Customer", width: 250 },
+  { field: "date", headerName: "Date", width: 150 },
+  { field: "amount", headerName: "Amount", width: 150 },
+  { field: "payment", headerName: "Payment Method", width: 250 },
   {
     field: "status",
     headerName: "Status",
-    width: 325,
+    width: 200,
     renderCell: (cellValues) => {
       return (
         <div

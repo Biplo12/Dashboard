@@ -4,11 +4,16 @@
   box-shadow: $b-shadow;
   .latest-products-grid {
     box-shadow: $b-shadow;
-    .approved {
-      width: 50px;
-      height: 30px;
-      background-color: #d8ecd8;
-      color: #009399 !important;
+    .approved,
+    .pending {
+      padding: 5px;
+      border-radius: 5px;
+      color: green;
+      background-color: rgba(0, 128, 0, 0.151);
+    }
+    .pending {
+      color: goldenrod;
+      background-color: rgba(189, 189, 3, 0.103);
     }
   }
 }
