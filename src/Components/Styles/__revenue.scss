@@ -1,26 +1,26 @@
 .revenue-container {
-  height: auto;
+  width: 65%;
   display: flex;
-  flex: 1;
-  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
   padding: 20px;
-  box-shadow: $b-shadow;
   border-radius: 10px;
+  text-align: center;
+  box-shadow: $b-shadow;
   .revenue-title {
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
+    text-align: left;
   }
   h3 {
     font-size: 1.5rem;
     font-weight: 300;
+    padding: 20px 0;
   }
   h2 {
     font-size: 2.25rem;
     font-weight: 400;
-    padding: 20px 0;
+    padding-bottom: 20px;
   }
   .revenue-description {
     font-size: 1rem;
@@ -29,6 +29,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     padding: 20px 0;
     .revenue-item {
       display: flex;
@@ -36,11 +37,14 @@
       align-items: space-between;
       flex-direction: column;
       text-align: center;
+      p {
+        font-size: 0.85rem;
+      }
       .revenue-item-value {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         font-weight: 300;
         padding-top: 10px;
       }
@@ -55,6 +59,19 @@
       color: #23843d;
       svg {
         fill: #23843d;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .revenue-container {
+    .revenue-bottom {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .revenue-item {
+        margin-bottom: 10px;
       }
     }
   }

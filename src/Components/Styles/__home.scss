@@ -1,6 +1,6 @@
 .home-container {
-  width: calc(100% - 65px);
-  height: calc(125vh - 100px);
+  width: auto;
+  height: auto;
   margin: 100px 0 0 65px;
   color: #000;
   .home-charts {
@@ -11,6 +11,17 @@
   .home-table {
     display: flex;
     padding: 1rem 2rem;
-    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home-charts {
+    flex-direction: column;
+    .revenue-container {
+      width: 100%;
+    }
+    .chart-container {
+      height: 400px;
+    }
   }
 }

@@ -1,10 +1,5 @@
 .chart-container {
-  width: auto;
-  flex: 3;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: $b-shadow;
+  width: 100%;
   z-index: 1;
+  box-shadow: $b-shadow;
 }

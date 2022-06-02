@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   WidgetsOutlined,
   DataSaverOffOutlined,
@@ -15,19 +16,29 @@ const sideBar = () => {
       </div>
       <div className="sidebar-items-wrapper">
         <div className="sidebar-item active">
-          <WidgetsOutlined />
+          <Link to="/">
+            <WidgetsOutlined />
+          </Link>
         </div>
         <div className="sidebar-item">
-          <DataSaverOffOutlined />
+          <Link to="/analytics">
+            <DataSaverOffOutlined />
+          </Link>
         </div>
         <div className="sidebar-item">
-          <PeopleAltOutlined />
+          <Link to="/users">
+            <PeopleAltOutlined />
+          </Link>
         </div>
         <div className="sidebar-item">
-          <ShoppingCartOutlined />
+          <Link to="/orders">
+            <ShoppingCartOutlined />
+          </Link>
         </div>
         <div className="sidebar-item">
-          <MoreOutlined />
+          <Link to="/products">
+            <MoreOutlined />
+          </Link>
         </div>
       </div>
       <div className="sidebar-bottom">

@@ -1,12 +1,74 @@
 .users-container {
   width: calc(100% - 65px);
-  height: calc(100vh - 65px);
+  height: calc(95vh - 65px);
   margin: 65px 0 0 65px;
   padding: 2rem;
   color: #000;
+  .users-table-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    a {
+      color: #008000;
+      border: 1px solid #008000;
+      padding: 10px;
+      transition: $transition;
+    }
+    a:hover {
+      color: #fff;
+      background-color: #008000;
+    }
+  }
   .users-table {
     flex: 1;
     height: 100%;
     box-shadow: $b-shadow;
+    .active,
+    .pending,
+    .passive {
+      padding: 5px;
+      border-radius: 5px;
+      color: green;
+      background-color: rgba(0, 128, 0, 0.151);
+    }
+    .pending {
+      color: goldenrod;
+      background-color: rgba(189, 189, 3, 0.103);
+    }
+    .passive {
+      color: red;
+      background-color: rgba(189, 3, 3, 0.103);
+    }
+    .cellAction {
+      display: flex;
+      .viewButton {
+        color: #5d5db3;
+        border: 1px solid #5d5db3;
+        padding: 5px 10px;
+        transition: $transition;
+        margin-right: 0.5rem;
+      }
+      .viewButton:hover {
+        color: #fff;
+        background-color: #5d5db3;
+      }
+      .deleteButton {
+        color: #e35572;
+        border: 1px solid #e35572;
+        padding: 5px 10px;
+        transition: $transition;
+        cursor: pointer;
+      }
+      .deleteButton:hover {
+        color: #fff;
+        background-color: #e35572;
+      }
+    }
   }
 }

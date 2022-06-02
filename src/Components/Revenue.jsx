@@ -2,6 +2,7 @@ import React from "react";
 import { CircularProgressBar } from "@tomik23/react-circular-progress-bar";
 import { ArrowDropUp, ArrowDropDown } from "@mui/icons-material";
 import CountUp from "react-countup";
+
 const props = {
   percent: 60,
   colorSlice: "#2c50ef",

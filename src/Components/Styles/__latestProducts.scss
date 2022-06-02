@@ -1,8 +1,8 @@
 .latest-products-container {
-  flex: 1;
-  height: 375px;
+  width: 100%;
   box-shadow: $b-shadow;
   .latest-products-grid {
+    height: 375px;
     box-shadow: $b-shadow;
     .approved,
     .pending {

@@ -1,5 +1,5 @@
 import React from "react";
-import { widgetData } from "./widgetData";
+import { widgetData } from "./../DummyData/widgetData";
 
 const Widget = () => {
   return (

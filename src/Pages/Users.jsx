@@ -1,31 +1,75 @@
 import { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import Topbar from "./../Components/Topbar";
-import { userColumns, userRows } from "./UsersData";
 import { Link } from "react-router-dom";
+import { rows } from "../DummyData/UsersData";
 import { DataGrid } from "@mui/x-data-grid";
+
 const Users = () => {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState(rows);
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
-  const actionColumn = [
+
+  const columns = [
+    { field: "id", headerName: "ID", width: 50 },
+    {
+      field: "picture",
+      headerName: "Picture",
+      width: 200,
+      renderCell: (cellValues) => {
+        return (
+          <div className="cellWithImg">
+            <img
+              className="cellImg"
+              src={cellValues.row.picture}
+              alt="avatar"
+            />
+          </div>
+        );
+      },
+    },
+    { field: "full_name", headerName: "Full Name", width: 300 },
+    { field: "first_name", headerName: "First Name", width: 300 },
+    { field: "last_name", headerName: "Last Name", width: 300 },
+    { field: "username", headerName: "Username", width: 300 },
+    { field: "email", headerName: "Email", width: 300 },
+    { field: "gender", headerName: "Gender", width: 300 },
+    { field: "age", headerName: "Age", width: 300 },
+    { field: "city", headerName: "City", width: 300 },
+    {
+      field: "status",
+      headerName: "Status",
+      width: 200,
+      renderCell: (cellValues) => {
+        return (
+          <div
+            className={
+              cellValues.row.status === "Active"
+                ? "active"
+                : cellValues.row.status === "Pending"
+                ? "pending"
+                : "passive"
+            }
+          >
+            {cellValues.value}
+          </div>
+        );
+      },
+    },
     {
       field: "action",
       headerName: "Action",
-      width: 200,
-      renderCell: (params) => {
+      width: 300,
+      renderCell: (cellValues) => {
         return (
           <div className="cellAction">
-            <Link
-              to={`/users/${params.row.id}`}
-              style={{ textDecoration: "none" }}
-            >
+            <Link to="/users/test">
               <div className="viewButton">View</div>
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(cellValues.row.id)}
             >
               Delete
             </div>
@@ -39,16 +83,17 @@ const Users = () => {
       <Sidebar />
       <Topbar />
       <div className="users-container">
-        <div className="users-table">
-          <DataGrid
-            columns={userColumns.concat(actionColumn)}
-            rows={data}
-            pageSize={5}
-            rowsPerPageOptions={[9]}
-            selectionModel="true"
-            checkboxSelection
-          />
+        <div className="users-table-header">
+          <h2>Add New User</h2>
+          <Link to="newUser">Add New</Link>
         </div>
+        <DataGrid
+          columns={columns}
+          rows={rows}
+          pageSize={[30]}
+          checkboxSelection
+          className="users-table"
+        />
       </div>
     </>
   );
