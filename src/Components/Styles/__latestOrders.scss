@@ -1,9 +1,21 @@
-.latest-products-container {
+.latest-orders-container {
   width: 100%;
   box-shadow: $b-shadow;
-  .latest-products-grid {
+  .latest-orders-grid {
     height: 375px;
     box-shadow: $b-shadow;
+    .viewButton {
+      color: #5d5db3;
+      border: 1px solid #5d5db3;
+      padding: 5px 10px;
+      transition: $transition;
+      margin-right: 0.5rem;
+    }
+    .viewButton:hover {
+      color: #fff;
+      background-color: #5d5db3;
+    }
+
     .approved,
     .pending {
       padding: 5px;

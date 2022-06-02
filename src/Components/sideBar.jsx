@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   WidgetsOutlined,
   DataSaverOffOutlined,
@@ -9,37 +9,38 @@ import {
   LogoutOutlined,
 } from "@mui/icons-material";
 const sideBar = () => {
+  const navLinkStyles = ({ isActive }) => {
+    return {
+      backgroundColor: isActive ? "#2544d7" : "#2c50ef",
+      borderRadius: isActive ? "10px" : "0",
+      boxShadow: isActive
+        ? "2px 2px 10px 1px rgba(201, 201, 201, 0.25)"
+        : "none",
+    };
+  };
   return (
     <div className="sidebar-container">
-      <div className="sidebar-logo">
-        <h1>DS</h1>
-      </div>
+      <NavLink to="/">
+        <div className="sidebar-logo">
+          <h1>DS</h1>
+        </div>
+      </NavLink>
       <div className="sidebar-items-wrapper">
-        <div className="sidebar-item active">
-          <Link to="/">
-            <WidgetsOutlined />
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/analytics">
-            <DataSaverOffOutlined />
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/users">
-            <PeopleAltOutlined />
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/orders">
-            <ShoppingCartOutlined />
-          </Link>
-        </div>
-        <div className="sidebar-item">
-          <Link to="/products">
-            <MoreOutlined />
-          </Link>
-        </div>
+        <NavLink to="/" style={navLinkStyles} className="sidebar-item">
+          <WidgetsOutlined />
+        </NavLink>
+        <NavLink to="/analytics" style={navLinkStyles} className="sidebar-item">
+          <DataSaverOffOutlined />
+        </NavLink>
+        <NavLink to="/users" style={navLinkStyles} className="sidebar-item">
+          <PeopleAltOutlined />
+        </NavLink>
+        <NavLink to="/orders" style={navLinkStyles} className="sidebar-item">
+          <ShoppingCartOutlined />
+        </NavLink>
+        <NavLink to="/products" style={navLinkStyles} className="sidebar-item">
+          <MoreOutlined />
+        </NavLink>
       </div>
       <div className="sidebar-bottom">
         <div className="sidebar-item">

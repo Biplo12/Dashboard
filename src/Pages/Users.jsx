@@ -7,16 +7,13 @@ import { DataGrid } from "@mui/x-data-grid";
 
 const Users = () => {
   const [data, setData] = useState(rows);
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
 
   const columns = [
     { field: "id", headerName: "ID", width: 50 },
     {
       field: "picture",
       headerName: "Picture",
-      width: 200,
+      width: 100,
       renderCell: (cellValues) => {
         return (
           <div className="cellWithImg">
@@ -29,18 +26,18 @@ const Users = () => {
         );
       },
     },
-    { field: "full_name", headerName: "Full Name", width: 300 },
-    { field: "first_name", headerName: "First Name", width: 300 },
-    { field: "last_name", headerName: "Last Name", width: 300 },
-    { field: "username", headerName: "Username", width: 300 },
+    { field: "full_name", headerName: "Full Name", width: 200 },
+    { field: "first_name", headerName: "First Name", width: 200 },
+    { field: "last_name", headerName: "Last Name", width: 150 },
+    { field: "username", headerName: "Username", width: 200 },
     { field: "email", headerName: "Email", width: 300 },
-    { field: "gender", headerName: "Gender", width: 300 },
-    { field: "age", headerName: "Age", width: 300 },
-    { field: "city", headerName: "City", width: 300 },
+    { field: "gender", headerName: "Gender", width: 150 },
+    { field: "age", headerName: "Age", width: 100 },
+    { field: "city", headerName: "City", width: 150 },
     {
       field: "status",
       headerName: "Status",
-      width: 200,
+      width: 150,
       renderCell: (cellValues) => {
         return (
           <div
@@ -60,19 +57,14 @@ const Users = () => {
     {
       field: "action",
       headerName: "Action",
-      width: 300,
+      width: 150,
       renderCell: (cellValues) => {
         return (
           <div className="cellAction">
             <Link to="/users/test">
               <div className="viewButton">View</div>
             </Link>
-            <div
-              className="deleteButton"
-              onClick={() => handleDelete(cellValues.row.id)}
-            >
-              Delete
-            </div>
+            <div className="deleteButton">Delete</div>
           </div>
         );
       },
@@ -80,7 +72,7 @@ const Users = () => {
   ];
   return (
     <>
-      <Sidebar />
+      <Sidebar className="sidebar-item" />
       <Topbar />
       <div className="users-container">
         <div className="users-table-header">

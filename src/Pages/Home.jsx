@@ -4,7 +4,7 @@ import Topbar from "./../Components/Topbar";
 import Widgets from "../Components/Widgets";
 import Revenue from "../Components/Revenue";
 import Charts from "../Components/Charts";
-import LastestProducts from "./../Components/LatestProducts";
+import LastestOrders from "./../Components/LatestOrders";
 
 const Home = () => {
   return (
@@ -18,7 +18,7 @@ const Home = () => {
           <Charts />
         </div>
         <div className="home-table">
-          <LastestProducts />
+          <LastestOrders />
         </div>
       </div>
     </>
