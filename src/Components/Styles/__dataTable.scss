@@ -1,10 +1,10 @@
-.users-container {
+.data-container {
   width: calc(100% - 65px);
   height: calc(95vh - 65px);
   margin: 65px 0 0 65px;
   padding: 2rem;
   color: #000;
-  .users-table-header {
+  .data-table-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -25,13 +25,15 @@
       background-color: #008000;
     }
   }
-  .users-table {
+  .data-table {
     flex: 1;
     height: 100%;
     box-shadow: $b-shadow;
     .active,
     .pending,
-    .passive {
+    .passive,
+    .available,
+    .sold {
       padding: 5px;
       border-radius: 5px;
       color: green;
@@ -41,7 +43,8 @@
       color: goldenrod;
       background-color: rgba(189, 189, 3, 0.103);
     }
-    .passive {
+    .passive,
+    .sold {
       color: red;
       background-color: rgba(189, 3, 3, 0.103);
     }

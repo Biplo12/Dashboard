@@ -1,36 +1,34 @@
 import Sidebar from "../Components/Sidebar";
 import Topbar from "./../Components/Topbar";
 import { Link } from "react-router-dom";
-import { rows } from "../DummyData/UsersData";
+import { rows } from "../DummyData/ProductsData";
 import { DataGrid } from "@mui/x-data-grid";
 
 const Users = () => {
   const columns = [
     { field: "id", headerName: "ID", width: 50 },
     {
-      field: "picture",
-      headerName: "Picture",
-      width: 100,
+      field: "product_image",
+      headerName: "Product Image",
+      width: 150,
       renderCell: (cellValues) => {
         return (
           <div className="cellWithImg">
             <img
               className="cellImg"
-              src={cellValues.row.picture}
+              src={cellValues.row.product_image}
               alt="avatar"
             />
           </div>
         );
       },
     },
-    { field: "full_name", headerName: "Full Name", width: 200 },
-    { field: "first_name", headerName: "First Name", width: 200 },
-    { field: "last_name", headerName: "Last Name", width: 150 },
-    { field: "username", headerName: "Username", width: 200 },
-    { field: "email", headerName: "Email", width: 300 },
-    { field: "gender", headerName: "Gender", width: 150 },
-    { field: "age", headerName: "Age", width: 100 },
-    { field: "city", headerName: "City", width: 150 },
+    { field: "product_name", headerName: "Product name", width: 150 },
+    { field: "color", headerName: "Color", width: 150 },
+    { field: "size", headerName: "Size", width: 150 },
+    { field: "price", headerName: "Price", width: 150 },
+    { field: "amount", headerName: "Amount", width: 150 },
+    { field: "total_sales", headerName: "Total Sales", width: 150 },
     {
       field: "status",
       headerName: "Status",
@@ -39,11 +37,7 @@ const Users = () => {
         return (
           <div
             className={
-              cellValues.row.status === "Active"
-                ? "active"
-                : cellValues.row.status === "Pending"
-                ? "pending"
-                : "passive"
+              cellValues.row.status === "Available" ? "available" : "sold"
             }
           >
             {cellValues.value}
@@ -73,8 +67,8 @@ const Users = () => {
       <Topbar />
       <div className="data-container">
         <div className="data-table-header">
-          <h2>Add New User</h2>
-          <Link to="newUser">Add New</Link>
+          <h2>Add New Product</h2>
+          <Link to="newProduct">Add New</Link>
         </div>
         <DataGrid
           columns={columns}

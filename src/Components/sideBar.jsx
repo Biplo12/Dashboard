@@ -29,17 +29,17 @@ const sideBar = () => {
         <NavLink to="/" style={navLinkStyles} className="sidebar-item">
           <WidgetsOutlined />
         </NavLink>
-        <NavLink to="/analytics" style={navLinkStyles} className="sidebar-item">
-          <DataSaverOffOutlined />
-        </NavLink>
         <NavLink to="/users" style={navLinkStyles} className="sidebar-item">
           <PeopleAltOutlined />
         </NavLink>
-        <NavLink to="/orders" style={navLinkStyles} className="sidebar-item">
-          <ShoppingCartOutlined />
-        </NavLink>
         <NavLink to="/products" style={navLinkStyles} className="sidebar-item">
           <MoreOutlined />
+        </NavLink>
+        <NavLink to="/analytics" style={navLinkStyles} className="sidebar-item">
+          <DataSaverOffOutlined />
+        </NavLink>
+        <NavLink to="/orders" style={navLinkStyles} className="sidebar-item">
+          <ShoppingCartOutlined />
         </NavLink>
       </div>
       <div className="sidebar-bottom">
