@@ -1,3 +1,64 @@
+import { Link } from "react-router-dom";
+
+export const columns = [
+  { field: "id", headerName: "ID", width: 50 },
+  {
+    field: "picture",
+    headerName: "Picture",
+    width: 100,
+    renderCell: (cellValues) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={cellValues.row.picture} alt="avatar" />
+        </div>
+      );
+    },
+  },
+  { field: "full_name", headerName: "Full Name", width: 200 },
+  { field: "first_name", headerName: "First Name", width: 200 },
+  { field: "last_name", headerName: "Last Name", width: 150 },
+  { field: "username", headerName: "Username", width: 200 },
+  { field: "email", headerName: "Email", width: 300 },
+  { field: "gender", headerName: "Gender", width: 150 },
+  { field: "age", headerName: "Age", width: 100 },
+  { field: "city", headerName: "City", width: 150 },
+  {
+    field: "status",
+    headerName: "Status",
+    width: 150,
+    renderCell: (cellValues) => {
+      return (
+        <div
+          className={
+            cellValues.row.status === "Active"
+              ? "green"
+              : cellValues.row.status === "Pending"
+              ? "yellow"
+              : "red"
+          }
+        >
+          {cellValues.value}
+        </div>
+      );
+    },
+  },
+  {
+    field: "action",
+    headerName: "Action",
+    width: 150,
+    renderCell: () => {
+      return (
+        <div className="cellAction">
+          <Link to="/users/test">
+            <div className="viewButton">View</div>
+          </Link>
+          <div className="deleteButton">Delete</div>
+        </div>
+      );
+    },
+  },
+];
+
 export const rows = [
   {
     id: 1,

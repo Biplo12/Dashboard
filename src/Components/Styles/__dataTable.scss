@@ -29,22 +29,21 @@
     flex: 1;
     height: 100%;
     box-shadow: $b-shadow;
-    .active,
-    .pending,
-    .passive,
-    .available,
-    .sold {
+    .green,
+    .yellow,
+    .red {
       padding: 5px;
       border-radius: 5px;
+    }
+    .green {
       color: green;
       background-color: rgba(0, 128, 0, 0.151);
     }
-    .pending {
+    .yellow {
       color: goldenrod;
       background-color: rgba(189, 189, 3, 0.103);
     }
-    .passive,
-    .sold {
+    .red {
       color: red;
       background-color: rgba(189, 3, 3, 0.103);
     }

@@ -23,9 +23,15 @@ const data = [
   ["June", 1700],
 ];
 
+const chartContainerStyle = {
+  width: "100%",
+  zIndex: "1",
+  boxShadow: "2px 4px 10px 1px rgba(201, 201, 201, 0.47)",
+};
+
 const Charts = () => {
   return (
-    <div className="chart-container">
+    <div className="chart-container" style={chartContainerStyle}>
       <Chart
         chartType="AreaChart"
         data={data}

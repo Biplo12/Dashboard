@@ -1,9 +1,66 @@
+import { Link } from "react-router-dom";
+
+export const columns = [
+  { field: "id", headerName: "ID", width: 50 },
+  {
+    field: "product_image",
+    headerName: "Product Image",
+    width: 150,
+    renderCell: (cellValues) => {
+      return (
+        <div className="cellWithImg">
+          <img
+            className="cellImg"
+            src={cellValues.row.product_image}
+            alt="avatar"
+          />
+        </div>
+      );
+    },
+  },
+  { field: "product", headerName: "Product", width: 150 },
+  { field: "color", headerName: "Color", width: 150 },
+  { field: "size", headerName: "Size", width: 150 },
+  { field: "price", headerName: "Price", width: 150 },
+  { field: "amount", headerName: "Amount", width: 150 },
+  { field: "total_sales", headerName: "Total Sales", width: 150 },
+  {
+    field: "status",
+    headerName: "Status",
+    width: 150,
+    renderCell: (cellValues) => {
+      return (
+        <div
+          className={cellValues.row.status === "Available" ? "green" : "red"}
+        >
+          {cellValues.value}
+        </div>
+      );
+    },
+  },
+  {
+    field: "action",
+    headerName: "Action",
+    width: 150,
+    renderCell: () => {
+      return (
+        <div className="cellAction">
+          <Link to="/users/test">
+            <div className="viewButton">View</div>
+          </Link>
+          <div className="deleteButton">Delete</div>
+        </div>
+      );
+    },
+  },
+];
+
 export const rows = [
   {
     id: 1,
     product_image:
       "https://robohash.org/sedquisquameligendi.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Pink",
     size: "L",
     price: "$209.39",
@@ -15,7 +72,7 @@ export const rows = [
     id: 2,
     product_image:
       "https://robohash.org/eumquaeratveritatis.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Fuscia",
     size: "XL",
     price: "$185.02",
@@ -26,7 +83,7 @@ export const rows = [
   {
     id: 3,
     product_image: "https://robohash.org/etliberoillum.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Khaki",
     size: "M",
     price: "$173.42",
@@ -38,7 +95,7 @@ export const rows = [
     id: 4,
     product_image:
       "https://robohash.org/ametnullaitaque.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Yellow",
     size: "3XL",
     price: "$152.29",
@@ -50,7 +107,7 @@ export const rows = [
     id: 5,
     product_image:
       "https://robohash.org/velitquaeratsoluta.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Orange",
     size: "XL",
     price: "$169.36",
@@ -61,7 +118,7 @@ export const rows = [
   {
     id: 6,
     product_image: "https://robohash.org/etdolorut.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Purple",
     size: "XS",
     price: "$270.95",
@@ -72,7 +129,7 @@ export const rows = [
   {
     id: 7,
     product_image: "https://robohash.org/velautemsed.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Maroon",
     size: "3XL",
     price: "$119.00",
@@ -83,7 +140,7 @@ export const rows = [
   {
     id: 8,
     product_image: "https://robohash.org/idinciduntaut.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Green",
     size: "2XL",
     price: "$207.20",
@@ -95,7 +152,7 @@ export const rows = [
     id: 9,
     product_image:
       "https://robohash.org/quaeratiurequi.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Yellow",
     size: "XS",
     price: "$96.73",
@@ -107,7 +164,7 @@ export const rows = [
     id: 10,
     product_image:
       "https://robohash.org/vitaeperspiciatisoptio.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Purple",
     size: "XS",
     price: "$182.62",
@@ -119,7 +176,7 @@ export const rows = [
     id: 11,
     product_image:
       "https://robohash.org/omnisdoloremmolestiae.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Pink",
     size: "XS",
     price: "$104.60",
@@ -131,7 +188,7 @@ export const rows = [
     id: 12,
     product_image:
       "https://robohash.org/suntvoluptaset.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Yellow",
     size: "S",
     price: "$174.26",
@@ -142,7 +199,7 @@ export const rows = [
   {
     id: 13,
     product_image: "https://robohash.org/autemquiaquia.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Red",
     size: "XL",
     price: "$212.04",
@@ -154,7 +211,7 @@ export const rows = [
     id: 14,
     product_image:
       "https://robohash.org/recusandaesapientequam.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Teal",
     size: "S",
     price: "$73.65",
@@ -166,7 +223,7 @@ export const rows = [
     id: 15,
     product_image:
       "https://robohash.org/eosquisimilique.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Indigo",
     size: "2XL",
     price: "$12.80",
@@ -178,7 +235,7 @@ export const rows = [
     id: 16,
     product_image:
       "https://robohash.org/vitaepraesentiumdoloribus.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Purple",
     size: "L",
     price: "$188.39",
@@ -189,7 +246,7 @@ export const rows = [
   {
     id: 17,
     product_image: "https://robohash.org/undeautculpa.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Violet",
     size: "XS",
     price: "$201.08",
@@ -201,7 +258,7 @@ export const rows = [
     id: 18,
     product_image:
       "https://robohash.org/voluptatumnisiquo.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Pink",
     size: "XL",
     price: "$97.43",
@@ -212,7 +269,7 @@ export const rows = [
   {
     id: 19,
     product_image: "https://robohash.org/ettemporemodi.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Indigo",
     size: "L",
     price: "$54.46",
@@ -224,7 +281,7 @@ export const rows = [
     id: 20,
     product_image:
       "https://robohash.org/ducimusveniamrerum.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Maroon",
     size: "S",
     price: "$49.14",
@@ -236,7 +293,7 @@ export const rows = [
     id: 21,
     product_image:
       "https://robohash.org/voluptatummaioresperferendis.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Puce",
     size: "XS",
     price: "$136.71",
@@ -248,7 +305,7 @@ export const rows = [
     id: 22,
     product_image:
       "https://robohash.org/nesciuntautemut.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Blue",
     size: "S",
     price: "$63.64",
@@ -260,7 +317,7 @@ export const rows = [
     id: 23,
     product_image:
       "https://robohash.org/doloremquedignissimosesse.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Green",
     size: "3XL",
     price: "$15.23",
@@ -272,7 +329,7 @@ export const rows = [
     id: 24,
     product_image:
       "https://robohash.org/iurererumpariatur.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Goldenrod",
     size: "XS",
     price: "$93.20",
@@ -284,7 +341,7 @@ export const rows = [
     id: 25,
     product_image:
       "https://robohash.org/maximedoloremaut.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Maroon",
     size: "2XL",
     price: "$35.40",
@@ -296,7 +353,7 @@ export const rows = [
     id: 26,
     product_image:
       "https://robohash.org/doloremsedarchitecto.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Purple",
     size: "L",
     price: "$296.75",
@@ -308,7 +365,7 @@ export const rows = [
     id: 27,
     product_image:
       "https://robohash.org/quioccaecativeritatis.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Purple",
     size: "2XL",
     price: "$45.37",
@@ -320,7 +377,7 @@ export const rows = [
     id: 28,
     product_image:
       "https://robohash.org/doloremnonlibero.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Goldenrod",
     size: "2XL",
     price: "$219.85",
@@ -332,7 +389,7 @@ export const rows = [
     id: 29,
     product_image:
       "https://robohash.org/laborumenimatque.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Violet",
     size: "S",
     price: "$179.90",
@@ -344,7 +401,7 @@ export const rows = [
     id: 30,
     product_image:
       "https://robohash.org/voluptatibuscumqueet.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Turquoise",
     size: "3XL",
     price: "$158.22",
@@ -356,7 +413,7 @@ export const rows = [
     id: 31,
     product_image:
       "https://robohash.org/perferendisinvoluptas.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Yellow",
     size: "XL",
     price: "$179.51",
@@ -367,7 +424,7 @@ export const rows = [
   {
     id: 32,
     product_image: "https://robohash.org/utetnatus.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Red",
     size: "L",
     price: "$74.34",
@@ -379,7 +436,7 @@ export const rows = [
     id: 33,
     product_image:
       "https://robohash.org/debitisquasirerum.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Turquoise",
     size: "XL",
     price: "$285.16",
@@ -391,7 +448,7 @@ export const rows = [
     id: 34,
     product_image:
       "https://robohash.org/temporevelitharum.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Fuscia",
     size: "L",
     price: "$41.05",
@@ -402,7 +459,7 @@ export const rows = [
   {
     id: 35,
     product_image: "https://robohash.org/autemvelitab.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Yellow",
     size: "XS",
     price: "$294.77",
@@ -414,7 +471,7 @@ export const rows = [
     id: 36,
     product_image:
       "https://robohash.org/fugiateiusvelit.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Turquoise",
     size: "XL",
     price: "$210.81",
@@ -426,7 +483,7 @@ export const rows = [
     id: 37,
     product_image:
       "https://robohash.org/beataedistinctioullam.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Goldenrod",
     size: "3XL",
     price: "$125.10",
@@ -438,7 +495,7 @@ export const rows = [
     id: 38,
     product_image:
       "https://robohash.org/earumquiavelit.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Pink",
     size: "2XL",
     price: "$63.93",
@@ -449,7 +506,7 @@ export const rows = [
   {
     id: 39,
     product_image: "https://robohash.org/vitaeetet.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Mauv",
     size: "3XL",
     price: "$295.83",
@@ -461,7 +518,7 @@ export const rows = [
     id: 40,
     product_image:
       "https://robohash.org/veniamseddignissimos.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Fuscia",
     size: "M",
     price: "$253.94",
@@ -472,7 +529,7 @@ export const rows = [
   {
     id: 41,
     product_image: "https://robohash.org/undeomnisquo.png?size=50x50&set=set1",
-    product_name: "shorts",
+    product: "shorts",
     color: "Puce",
     size: "L",
     price: "$57.52",
@@ -484,7 +541,7 @@ export const rows = [
     id: 42,
     product_image:
       "https://robohash.org/quisquamvoluptatesquam.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Yellow",
     size: "S",
     price: "$245.20",
@@ -496,7 +553,7 @@ export const rows = [
     id: 43,
     product_image:
       "https://robohash.org/explicaboconsequaturvoluptate.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Teal",
     size: "S",
     price: "$77.13",
@@ -507,7 +564,7 @@ export const rows = [
   {
     id: 44,
     product_image: "https://robohash.org/eafaceresint.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Teal",
     size: "M",
     price: "$26.20",
@@ -519,7 +576,7 @@ export const rows = [
     id: 45,
     product_image:
       "https://robohash.org/praesentiumprovidentquos.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Puce",
     size: "3XL",
     price: "$269.82",
@@ -530,7 +587,7 @@ export const rows = [
   {
     id: 46,
     product_image: "https://robohash.org/nonsolutanam.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Purple",
     size: "M",
     price: "$70.48",
@@ -542,7 +599,7 @@ export const rows = [
     id: 47,
     product_image:
       "https://robohash.org/quaedictarepellendus.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Yellow",
     size: "XS",
     price: "$133.49",
@@ -553,7 +610,7 @@ export const rows = [
   {
     id: 48,
     product_image: "https://robohash.org/quisetet.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Pink",
     size: "3XL",
     price: "$283.39",
@@ -565,7 +622,7 @@ export const rows = [
     id: 49,
     product_image:
       "https://robohash.org/quifacilisvitae.png?size=50x50&set=set1",
-    product_name: "t-shirt",
+    product: "t-shirt",
     color: "Aquamarine",
     size: "L",
     price: "$181.78",
@@ -577,7 +634,7 @@ export const rows = [
     id: 50,
     product_image:
       "https://robohash.org/eaqueveniamquos.png?size=50x50&set=set1",
-    product_name: "hoodie",
+    product: "hoodie",
     color: "Indigo",
     size: "S",
     price: "$126.48",

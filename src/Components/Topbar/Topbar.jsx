@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  ChatOutlined,
-  NotificationsOutlined,
-  Search,
-} from "@mui/icons-material";
+import { ChatOutlined, NotificationsOutlined } from "@mui/icons-material";
 const Topbar = () => {
   return (
     <div className="topbar-container">
@@ -14,9 +10,6 @@ const Topbar = () => {
         <div className="topbar-item">
           <NotificationsOutlined />
         </div>
-        {/* <div className="topbar-profile-image">
-          <img src="./Images/Topbar/profile-photo.jpg" alt="user profile" />
-        </div> */}
       </div>
     </div>
   );

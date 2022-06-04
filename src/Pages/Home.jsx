@@ -1,10 +1,10 @@
 import React from "react";
-import Sidebar from "../Components/Sidebar";
-import Topbar from "./../Components/Topbar";
-import Widgets from "../Components/Widgets";
-import Revenue from "../Components/Revenue";
-import Charts from "../Components/Charts";
-import LastestOrders from "./../Components/LatestOrders";
+import Sidebar from "../Components/Sidebar/Sidebar";
+import Topbar from "../Components/Topbar/Topbar";
+import Widgets from "../Components/Widgets/Widgets";
+import Revenue from "../Components/Revenue/Revenue";
+import Charts from "../Components/Charts/Charts";
+import LastestOrders from "../Components/LatestOrders/LatestOrders";
 
 const Home = () => {
   return (
